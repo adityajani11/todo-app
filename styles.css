@@ -1,0 +1,91 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  background: linear-gradient(135deg, #96b7e9 0%, #e0e5ec 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent scrollbar from gradient */
+}
+.card {
+  border-radius: 1.5rem; /* More rounded corners for the card */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: rgba(255, 255, 255, 0.712); /* Slightly transparent white for card */
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+.list-group-item {
+  border-radius: 0.75rem !important; /* Rounded corners for list items */
+  margin-bottom: 0.75rem; /* Spacing between list items */
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+  word-break: break-word; /* Ensure long words wrap */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+}
+.list-group-item:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+.list-group-item.completed {
+  background-color: #d4edda; /* Lighter green for completed tasks */
+  text-decoration: line-through;
+  color: #6c757d; /* Gray out completed text */
+  opacity: 0.8; /* Slightly fade completed tasks */
+}
+.task-text {
+  flex-grow: 1;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+/* Adjust button sizes if needed */
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+/* Button hover animations */
+.btn {
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom Modal Styles for Delete Confirmation */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Above Bootstrap modals if any */
+  visibility: hidden; /* Hidden by default */
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
+}
+.modal-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  transform: translateY(-20px); /* Initial state for animation */
+  transition: transform 0.3s ease;
+}
+.modal-overlay.show .modal-content {
+  transform: translateY(0);
+}
+.modal-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #343a40;
+}
