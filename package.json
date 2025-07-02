@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.html",
   "scripts": {
-    "deploy": "gh-pages -d my-portfolio",
+    "deploy": "gh-pages -d .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "homepage": "https://adityajani11.github.io/todo-app.git",
