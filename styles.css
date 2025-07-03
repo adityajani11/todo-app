@@ -27,9 +27,11 @@ body {
 }
 .list-group-item.completed {
   background-color: #d4edda; /* Lighter green for completed tasks */
-  text-decoration: line-through;
   color: #6c757d; /* Gray out completed text */
   opacity: 0.8; /* Slightly fade completed tasks */
+}
+.list-group-item.completed .task-text {
+  text-decoration: line-through;
 }
 .task-text {
   flex-grow: 1;
